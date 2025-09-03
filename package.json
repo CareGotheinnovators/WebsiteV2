@@ -1,0 +1,31 @@
+{
+  "name": "carego-website",
+  "version": "1.0.0",
+  "description": "CareGo website imported from Webflow",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server src --port=3000 --open=/pages",
+    "build": "npm run clean && npm run copy-assets && npm run minify",
+    "clean": "rm -rf dist/*",
+    "copy-assets": "cp -r src/* dist/",
+    "minify": "npm run minify-css && npm run minify-js",
+    "minify-css": "cleancss -o dist/assets/css/style.min.css src/assets/css/*.css",
+    "minify-js": "terser src/assets/js/*.js --compress --mangle -o dist/assets/js/script.min.js",
+    "serve": "live-server dist --port=8080",
+    "import-webflow": "node scripts/import-webflow.js"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "clean-css-cli": "^5.6.2",
+    "terser": "^5.19.4"
+  },
+  "keywords": [
+    "webflow",
+    "healthcare",
+    "website",
+    "carego"
+  ],
+  "author": "CareGo Team",
+  "license": "MIT"
+}
+
