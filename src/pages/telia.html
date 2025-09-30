@@ -39,12 +39,43 @@
   opacity: 0;
   transition: all 0.2s ease-in-out;
  }
+ /* Dropdown indicator */
+ .nav-dropdown-toggle .nav-link-text::before {
+  content: '▾';
+  margin-right: 8px;
+  font-size: 14px;
+  opacity: 0.7;
+  transition: transform 0.2s ease-in-out;
+  display: inline-block;
+ }
+ .nav-dropdown.w--open .nav-dropdown-toggle .nav-link-text::before {
+  transform: rotate(180deg);
+ }
+ .nav-dropdown-list-wrap {
+  margin-top: 10px;
+  min-width: 260px !important;
+  width: auto !important;
+ }
+ .nav-dropdown-links-wrapper {
+  width: 100% !important;
+  padding: 0 15px;
+ }
+ .dropdown-nav-link {
+  white-space: nowrap;
+  text-align: left;
+  width: 100%;
+  padding: 8px 10px;
+  display: block;
+ }
  @media screen and (max-width: 991px) {
   .nav-menu .menu-wrap {
    height: calc(100vh - 88px);
   }
   .nav-menu .menu-additional-info-wrap {
    margin-top: auto;
+  }
+  .nav-dropdown-toggle .nav-link-text::before {
+   content: '';
   }
  }
 </style>
@@ -271,10 +302,21 @@ input[type="range"]::-moz-range-thumb {
                 <div class="nav-link-text">TELIA</div>
                 <div class="nav-link-dot"><br></div>
               </a>
-              <a data-w-id="ee3d3d1e-99e2-b5b8-5345-cc25d4f18b0e" href="products-and-services.html" class="nav-link w-inline-block">
-                <div class="nav-link-text">Products &amp; Services</div>
-                <div class="nav-link-dot"><br></div>
-              </a>
+              <div data-hover="true" data-delay="0" data-w-id="ee3d3d1e-99e2-b5b8-5345-cc25d4f18b0e" class="nav-dropdown w-dropdown">
+                <div class="nav-dropdown-toggle w-dropdown-toggle">
+                  <a href="products-and-services.html" class="nav-link w-inline-block">
+                    <div class="nav-link-text">Products &amp; Services</div>
+                    <div class="nav-link-dot"><br></div>
+                  </a>
+                </div>
+                <nav class="nav-dropdown-list-wrap w-dropdown-list">
+                  <div class="nav-dropdown-list">
+                    <div class="nav-dropdown-links-wrapper">
+                      <a href="themis-trace.html" class="dropdown-nav-link">Inventory Management</a>
+                    </div>
+                  </div>
+                </nav>
+              </div>
               <a data-w-id="ee3d3d1e-99e2-b5b8-5345-cc25d4f18b14" href="case-studies.html" class="nav-link w-inline-block">
                 <div class="nav-link-text">Case Studies</div>
                 <div class="nav-link-dot"><br></div>

@@ -1,0 +1,103 @@
+{
+  "posts": [
+    {
+      "id": "the-cost-of-automation",
+      "title": "The Cost of Automation: A Partnership Story",
+      "slug": "the-cost-of-automation",
+      "excerpt": "The Real Cost of Warehouse Automation: A Partnership Story",
+      "author": "Kurt Fowler",
+      "date": "2025-08-18",
+      "category": "Industry",
+      "featured_image": "images/Picture4.jpg",
+      "featured": true
+    },
+    {
+      "id": "greenfield-design",
+      "title": "Greenfield Design",
+      "slug": "greenfield-design", 
+      "excerpt": "Partner with CareGo for Your Greenfield Design",
+      "author": "Ashley McCalmont",
+      "date": "2025-05-01",
+      "category": "Industry",
+      "featured_image": "images/Greenfield-image_1.webp",
+      "featured": true
+    },
+    {
+      "id": "telia-for-pipe-tube",
+      "title": "TELIA For Pipe & Tube",
+      "slug": "telia-for-pipe-tube",
+      "excerpt": "Revolutionize Your Facility with TELIA for Pipe and Tube",
+      "author": "Ashley McCalmont", 
+      "date": "2025-05-01",
+      "category": "Technology",
+      "featured_image": "images/Steel-Pipe-and-Tube-Mill-1_1.webp",
+      "featured": true
+    },
+    {
+      "id": "beneficios-de-telia",
+      "title": "Beneficios de TELIA",
+      "slug": "beneficios-de-telia",
+      "excerpt": "Explora los beneficios de TELIA",
+      "author": "Ashley McCalmont",
+      "date": "2025-05-01", 
+      "category": "Technology",
+      "featured_image": "images/TELIA-handheld-Horizontal.png",
+      "featured": false
+    },
+    {
+      "id": "benefits-of-telia",
+      "title": "Benefits Of TELIA",
+      "slug": "benefits-of-telia",
+      "excerpt": "Learn more about how TELIA can transform your facility",
+      "author": "Ashley McCalmont",
+      "date": "2025-05-01",
+      "category": "Technology", 
+      "featured_image": "images/TELIA-handheld-Horizontal.png",
+      "featured": true
+    },
+    {
+      "id": "carego-aistech-2025",
+      "title": "CareGo to Showcase Advanced Logistics Automation at AISTech 2025 in Nashville",
+      "slug": "carego-aistech-2025",
+      "excerpt": "Learn more about CareGo's participation in the upcoming AIST event",
+      "author": "Ashley McCalmont",
+      "date": "2024-12-17",
+      "category": "Happenings",
+      "featured_image": "images/aistech2025blog.png",
+      "featured": true
+    },
+    {
+      "id": "zero-harm-work-environment", 
+      "title": "Creating a Zero Harm Work Environment: Working Towards \"Zero\" with Automation",
+      "slug": "zero-harm-work-environment",
+      "excerpt": "Discover how automation with TELIA creates a safer work environment by removing employees from hazardous areas and reducing risks. Achieve Zero Harm while enhancing efficiency and productivity in your facility.",
+      "author": "Simon Loik",
+      "date": "2024-10-09",
+      "category": "Industry",
+      "featured_image": "images/safety_1.webp", 
+      "featured": false
+    },
+    {
+      "id": "optimize-finished-goods-bay",
+      "title": "The New Frontier: Optimize your finished goods bay",
+      "slug": "optimize-finished-goods-bay",
+      "excerpt": "Transform your finished goods bay into a competitive advantage",
+      "author": "Ashley McCalmont",
+      "date": "2024-06-19",
+      "category": "Innovation",
+      "featured_image": "images/thenewfrontier.jpg",
+      "featured": false
+    },
+    {
+      "id": "telia-rectangular-palletized",
+      "title": "Revolutionizing Warehouse Automation: Introducing TELIA for rectangular and palletized products",
+      "slug": "telia-rectangular-palletized", 
+      "excerpt": "Discover how TELIA automation is expanding beyond traditional applications",
+      "author": "Ashley McCalmont",
+      "date": "2024-06-11",
+      "category": "Innovation",
+      "featured_image": "images/Teliarectangular.webp",
+      "featured": false
+    }
+  ]
+}

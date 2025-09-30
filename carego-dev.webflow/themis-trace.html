@@ -95,15 +95,16 @@
     pointer-events: none;
   }
   
-  /* Enhanced Carousel Styles */
+  /* Enhanced Carousel Styles - Optimized for Different Screen Sizes */
   .carousel-section {
-    padding: 80px 0;
+    padding: 60px 0;
     background: #042449;
     position: relative;
+    margin-bottom: 50px;
   }
   
   .carousel-wrap {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     position: relative;
@@ -112,18 +113,20 @@
   
   /* Image Container */
   .carousel-image-container {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     position: relative;
   }
   
   .carousel-image-wrapper {
     position: relative;
     width: 100%;
-    height: 600px;
-    border-radius: 20px;
+    height: 340px;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
     background: #ffffff;
+    padding: 14px;
+    box-sizing: border-box;
   }
   
   .carousel-image-slide {
@@ -143,7 +146,7 @@
   .carousel-main-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
   }
   
@@ -152,7 +155,7 @@
     display: flex;
     justify-content: center;
     gap: 16px;
-    margin-top: 40px;
+    margin-top: 20px;
   }
   
   .carousel-dot {
@@ -185,7 +188,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    gap: 40px;
+    gap: 15px;
   }
   
   .carousel-content-wrapper {
@@ -212,24 +215,26 @@
   
   .carousel-content-box {
     background: #fff;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(106, 130, 255, 0.1);
     width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
   }
   
   .carousel-title {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 600;
     color: #042449;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     text-align: center;
   }
   
   .carousel-description {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.5;
     color: #5a6c7d;
     text-align: center;
     margin: 0;
@@ -238,8 +243,8 @@
   /* Navigation Arrows */
   
   .carousel-nav-btn {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     border: 3px solid #FF771B;
     background: rgba(255, 255, 255, 0.95);
@@ -251,11 +256,11 @@
     justify-content: center;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(10px);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     flex-shrink: 0;
     align-self: center;
-    margin-top: 100px;
+    margin-top: 60px;
   }
   
   .carousel-nav-btn svg {
@@ -278,14 +283,338 @@
   
 
   
-  /* Responsive Design */
-  @media screen and (max-width: 768px) {
+  /* Themis Description Section Styles - Tightened Spacing */
+  .themis-description-section {
+    padding: 50px 0;
+    background: transparent;
+    position: relative;
+    margin-bottom: 40px;
+  }
+  
+  .themis-description-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 40px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .themis-description-text {
+    font-size: 22px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 32px;
+    font-weight: 400;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .themis-description-text:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Standardize Key Benefits Image Sizes */
+  .ps-image {
+    width: 100% !important;
+    max-width: 450px !important;
+    height: auto !important;
+    object-fit: contain;
+  }
+  
+  .ps-image.with-border-radius {
+    max-width: 450px !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+  }
+  
+  /* Specific targeting for Invaluable Insights image */
+  .ps-wrapper.greenfield-design .ps-image-column img,
+  .ps-image-column.greenfield-design img {
+    max-width: 450px !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+  
+  /* Make brownfield-design images (Quality Control) bigger */
+  .ps-wrapper.brownfield-design .ps-image-column img,
+  .ps-image-column.brownfield-design img {
+    max-width: 550px !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+  
+  /* Make Scanner Man 50% bigger than standard images */
+  .ps-image-column img[src*="Scanner_Man"] {
+    max-width: 675px !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+  
+
+  /* Improved Section Spacing */
+  .section.without-bottom-spacing {
+    padding-bottom: 0 !important;
+  }
+  
+  .ps-wrapper {
+    padding: 60px 0 !important;
+    margin: 0 !important;
+  }
+  
+  .ps-wrapper.reverce {
+    padding: 60px 0 !important;
+  }
+  
+  .ps-wrapper.inner-space {
+    padding: 70px 0 !important;
+  }
+  
+  .ps-wrapper.greenfield-design {
+    padding: 60px 0 !important;
+  }
+  
+  .ps-wrapper.brownfield-design {
+    padding: 60px 0 !important;
+  }
+  
+  .ps-wrapper.implementation {
+    padding: 60px 0 !important;
+  }
+  
+  .ps-wrapper.customer-success {
+    padding: 60px 0 !important;
+  }
+  
+  /* Better spacing between text and images */
+  .ps-text-column {
+    padding: 0 40px !important;
+  }
+  
+  .ps-image-column {
+    padding: 0 40px !important;
+  }
+
+  /* Responsive Design - Better Breakpoints */
+  
+  /* Large Desktop (1600px+) */
+  @media screen and (min-width: 1600px) {
+    .carousel-image-wrapper {
+      height: 420px;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+  }
+  
+  /* Standard Desktop (1440px - 1599px) */
+  @media screen and (min-width: 1440px) and (max-width: 1599px) {
     .carousel-section {
-      padding: 60px 0;
+      padding: 55px 0;
     }
     
     .carousel-image-wrapper {
-      height: 400px;
+      height: 360px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
+  
+  /* Laptop/Small Desktop (1024px - 1439px) - Perfect for 14" laptops */
+  @media screen and (min-width: 1024px) and (max-width: 1439px) {
+    .carousel-section {
+      padding: 50px 0;
+      margin-bottom: 40px;
+    }
+    
+    .carousel-image-wrapper {
+      height: 300px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .carousel-image-container {
+      margin-bottom: 25px;
+    }
+    
+    .carousel-content-container {
+      gap: 12px;
+    }
+    
+    .carousel-content-box {
+      padding: 20px;
+      max-width: 500px;
+    }
+    
+    .carousel-title {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    
+    .carousel-description {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    
+    .carousel-nav-btn {
+      margin-top: 40px;
+    }
+    
+    .carousel-dots {
+      margin-top: 15px;
+    }
+  }
+  
+  /* Tablet/Small Laptop (768px - 1023px) */
+  @media screen and (max-width: 1023px) {
+    .carousel-section {
+      padding: 60px 0;
+      margin-bottom: 50px;
+    }
+    
+    .carousel-wrap {
+      max-width: 100%;
+      padding: 0 25px;
+    }
+    
+    .carousel-image-wrapper {
+      height: 380px;
+      padding: 14px;
+      border-radius: 14px;
+    }
+    
+    .carousel-content-container {
+      gap: 12px;
+    }
+    
+    .carousel-content-box {
+      padding: 20px 18px;
+      max-width: 450px;
+    }
+    
+    .carousel-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .carousel-description {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    
+    .carousel-nav-btn {
+      width: 55px;
+      height: 55px;
+      margin-top: 45px;
+    }
+    
+    .carousel-nav-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  
+  /* Tablet (769px - 1023px) */
+  @media screen and (min-width: 769px) and (max-width: 1023px) {
+    .ps-wrapper {
+      padding: 55px 0 !important;
+    }
+    
+    .ps-wrapper.inner-space {
+      padding: 60px 0 !important;
+    }
+    
+    .themis-description-section {
+      padding: 40px 0;
+    }
+    
+    /* Tablet specific for Quality Control (brownfield-design) - bigger */
+    .ps-wrapper.brownfield-design .ps-image-column img,
+    .ps-image-column.brownfield-design img {
+      max-width: 480px !important;
+    }
+    
+    /* Tablet specific for Scanner Man - 50% bigger */
+    .ps-image-column img[src*="Scanner_Man"] {
+      max-width: 675px !important;
+    }
+    
+  }
+  
+  /* Mobile (768px and below) */
+  @media screen and (max-width: 768px) {
+    .carousel-section {
+      padding: 50px 0;
+      margin-bottom: 40px;
+    }
+    
+    .carousel-wrap {
+      padding: 0 20px;
+    }
+    
+    .themis-description-section {
+      padding: 35px 0;
+    }
+    
+    .themis-description-wrapper {
+      padding: 0 25px;
+    }
+    
+    .themis-description-text {
+      font-size: 19px;
+      line-height: 1.5;
+      margin-bottom: 28px;
+    }
+    
+    .ps-image {
+      max-width: 350px !important;
+    }
+    
+    .ps-image.with-border-radius {
+      max-width: 350px !important;
+    }
+    
+    /* Mobile specific for Invaluable Insights */
+    .ps-wrapper.greenfield-design .ps-image-column img,
+    .ps-image-column.greenfield-design img {
+      max-width: 350px !important;
+    }
+    
+    /* Mobile specific for Quality Control (brownfield-design) - bigger */
+    .ps-wrapper.brownfield-design .ps-image-column img,
+    .ps-image-column.brownfield-design img {
+      max-width: 420px !important;
+    }
+    
+    /* Mobile specific for Scanner Man - 50% bigger */
+    .ps-image-column img[src*="Scanner_Man"] {
+      max-width: 525px !important;
+    }
+    
+    
+    /* Mobile spacing adjustments */
+    .ps-wrapper {
+      padding: 50px 0 !important;
+    }
+    
+    .ps-wrapper.inner-space {
+      padding: 55px 0 !important;
+    }
+    
+    .ps-text-column {
+      padding: 0 25px !important;
+    }
+    
+    .ps-image-column {
+      padding: 0 25px !important;
+    }
+    
+    .carousel-image-wrapper {
+      height: 320px;
+      padding: 12px;
+      border-radius: 12px;
     }
     
     .carousel-image-slide {
@@ -293,40 +622,43 @@
     }
     
     .carousel-content-container {
-      gap: 20px;
+      gap: 10px;
     }
     
     .carousel-content-box {
-      padding: 30px 20px;
+      padding: 18px 16px;
+      max-width: 350px;
     }
     
     .carousel-title {
-      font-size: 24px;
+      font-size: 18px;
+      margin-bottom: 8px;
     }
     
     .carousel-description {
-      font-size: 16px;
+      font-size: 13px;
+      line-height: 1.4;
     }
     
     .carousel-nav-btn {
-      width: 60px;
-      height: 60px;
-      margin-top: 80px;
+      width: 50px;
+      height: 50px;
+      margin-top: 35px;
     }
     
     .carousel-nav-btn svg {
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
     }
     
     .carousel-dots {
       gap: 12px;
-      margin-top: 30px;
+      margin-top: 15px;
     }
     
     .carousel-dot {
-      width: 16px;
-      height: 16px;
+      width: 14px;
+      height: 14px;
     }
   }
   
@@ -357,6 +689,77 @@
     
     .carousel-nav-btn.next {
       order: 2;
+    }
+  }
+  
+  /* Control Panel Background Image Styling - Large Image with Minimal Navbar Spacing */
+  body .page-wrapper .section.products-services {
+    padding: 20px 20px 0px 20px !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    background: transparent !important;
+    height: auto !important;
+    min-height: 400px !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+  
+  body .page-wrapper .section.products-services img {
+    width: auto !important;
+    height: 600px !important;
+    max-width: 800px !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+    display: block !important;
+    margin: 0 auto !important;
+    opacity: 0.85 !important;
+  }
+  
+  /* Ensure logo section is positioned properly */
+  body .page-wrapper .div-block-8 {
+    position: relative !important;
+    z-index: 2 !important;
+    margin-top: -100px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  @media screen and (max-width: 768px) {
+    body .page-wrapper .section.products-services {
+      padding: 15px 15px 0px 15px !important;
+      margin: 0 !important;
+      min-height: 320px !important;
+    }
+    
+    body .page-wrapper .section.products-services img {
+      height: 450px !important;
+      max-width: 600px !important;
+      opacity: 0.8 !important;
+    }
+    
+    body .page-wrapper .div-block-8 {
+      margin-top: -80px !important;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    body .page-wrapper .section.products-services {
+      padding: 10px 10px 0px 10px !important;
+      margin: 0 !important;
+      min-height: 250px !important;
+    }
+    
+    body .page-wrapper .section.products-services img {
+      height: 350px !important;
+      max-width: 450px !important;
+      opacity: 0.75 !important;
+    }
+    
+    body .page-wrapper .div-block-8 {
+      margin-top: -60px !important;
     }
   }
 </style>
@@ -420,7 +823,7 @@
     </div>
   </div>
   <div class="page-wrapper body-background">
-    <section class="section products-services"><img src="images/Screenshot-2025-08-25-at-8.13.13-AM.png" loading="lazy" alt=""></section>
+    <section class="section products-services"><img src="images/controlpanelorange.png" loading="lazy" alt=""></section>
     <div class="div-block-8"><img src="images/Themis-Trace-Branding-Guide-2025-2.svg" loading="lazy" width="878" alt="" class="image-5">
       <div data-w-id="0cf66b5f-97c6-f0ca-ab01-e8f6bb198853" style="opacity:0" class="ps-banner-gradient w-embed">
         <style>
@@ -433,19 +836,42 @@ filter: blur(50px);
 </style>
       </div>
     </div>
+    
+    <!-- Themis-Trace Description Section -->
+    <section class="section themis-description-section">
+      <div class="w-layout-blockcontainer base-container w-container">
+        <div class="themis-description-wrapper">
+          <p class="themis-description-text">
+            Built in collaboration with the people who use it most, Themis-Trace is a 
+            next-generation inventory management system designed for real-world operations. 
+            Re-imagined from the ground up, it features a modern, intuitive interface,
+            streamlined workflows, and powerful insights that transform how inventory is tracked,
+            moved, and understood.
+          </p>
+          <p class="themis-description-text">
+            With a browser app designed around user workflows, Themis-Trace puts total control at your fingertips. Schedule shipments and receiving, print BOLs,
+            and access detailed reports—all while maintaining accurate inventory records.
+          </p>
+          <p class="themis-description-text">
+            In a sector where traditional, manual systems are still prevalent, Themis-Trace brings clarity, confidence, and efficiency to every stage of the process.
+          </p>
+        </div>
+      </div>
+    </section>
+    
     <section class="carousel-section">
       <div class="w-layout-blockcontainer carousel-wrap w-container">
         <!-- Large Image Display Area -->
         <div class="carousel-image-container">
           <div class="carousel-image-wrapper">
             <div class="carousel-image-slide active" data-slide="0">
-              <img src="images/Themis-Trace_Screenshot1.png" alt="Themis-Trace Inventory Interface" class="carousel-main-image" loading="lazy">
+              <img src="images/productdetails_new.png" alt="Product Details" class="carousel-main-image" loading="lazy">
             </div>
             <div class="carousel-image-slide" data-slide="1">
-              <img src="images/Themis-Trace_Screenshot2.png" alt="Themis-Trace Dashboard Analytics" class="carousel-main-image" loading="lazy">
+              <img src="images/inventoryentry_new.png" alt="Streamlined Inventory Entry" class="carousel-main-image" loading="lazy">
             </div>
             <div class="carousel-image-slide" data-slide="2">
-              <img src="images/Themis-Trace_Screenshot3.png" alt="Themis-Trace Mobile Interface" class="carousel-main-image" loading="lazy">
+              <img src="images/Shipping Order Grid.png" alt="Fast, Filterable Shipping Insights" class="carousel-main-image" loading="lazy">
             </div>
           </div>
           
@@ -469,7 +895,7 @@ filter: blur(50px);
           <div class="carousel-content-wrapper">
             <div class="carousel-content-slide active" data-slide="0">
               <div class="carousel-content-box">
-                <h3 class="carousel-title">Complete Inventory Visibility</h3>
+                <h3 class="carousel-title">Product Details</h3>
                 <p class="carousel-description">
                   With Themis-Trace, users gain complete visibility into every inventory item. This view showcases essential product information including its current facility, storage location, QA status, associated shipping and receiving order IDs, bill of lading (BOL), and detailed billing and shipping information. Whether tracking where it's stored, who it's billed to, or when it was received—Themis-Trace ensures nothing goes unseen.
                 </p>
@@ -478,18 +904,18 @@ filter: blur(50px);
             
             <div class="carousel-content-slide" data-slide="1">
               <div class="carousel-content-box">
-                <h3 class="carousel-title">Real-Time Dashboard Analytics</h3>
+                <h3 class="carousel-title">Streamlined Inventory Entry</h3>
                 <p class="carousel-description">
-                  Monitor your entire operation from a centralized dashboard. Track inventory levels, processing times, and facility performance metrics in real-time. Get instant insights into bottlenecks, optimize workflows, and make data-driven decisions that improve your bottom line.
+                  Adding new inventory is simple and precise with the New Receiving Order screen. Users can quickly input detailed product specifications, such as gauge, dimensions, weight, and diameters—all in one place. The intuitive layout ensures accurate data capture while guiding users step-by-step through the receiving process, making it easy to bring products into the system with confidence.
                 </p>
               </div>
             </div>
             
             <div class="carousel-content-slide" data-slide="2">
               <div class="carousel-content-box">
-                <h3 class="carousel-title">Mobile-First Design</h3>
+                <h3 class="carousel-title">Fast, Filterable Shipping Insights</h3>
                 <p class="carousel-description">
-                  Access Themis-Trace anywhere, anytime. Our mobile-optimized interface ensures you can manage inventory, approve shipments, and monitor operations whether you're on the warehouse floor or across the globe. Full functionality in the palm of your hand.
+                  The Shipping Grid gives users a powerful, searchable view of outgoing inventory. Filter by Order ID, BOL, facility, customer, carrier, or even trailer number to instantly locate shipments. With key details like ship time, appointment windows, and total weight visible at a glance, it's never been easier to track what's leaving your facility and find when it took place.
                 </p>
               </div>
             </div>
@@ -506,82 +932,65 @@ filter: blur(50px);
     </section>
     <section class="section without-bottom-spacing">
       <div class="w-layout-blockcontainer big-container w-container">
-        <div>
-          <h2 class="text-center">Products</h2>
+        <div style="margin-bottom: 50px;">
+          <h2 class="text-center">Key Benefits</h2>
           <div class="ps-gradient-line"></div>
         </div>
         <div class="ps-wrapper reverce inner-space">
-          <div data-w-id="c571feb0-d93f-a69b-adb7-124a7c66df31" style="opacity:0" class="ps-text-column"><img src="images/TELIA-logo-1.svg" loading="lazy" alt="Telia logo" height="Auto" class="ps-logo-img">
-            <p class="margin-bottom-16 semi-bold">TELIA represents a paradigm shift in product handling, elevating storage density, throughput and productivity to unprecedented levels while steadfastly upholding safety standards.</p>
-            <p class="text-light">By leveraging cutting-edge automation, it optimizes vertical space, maximizing storage capacity without compromising efficiency. This not only enhances operational output but also cultivates an environment where safety is paramount. Through meticulous monitoring and innovative design, TELIA ensures that every task is executed with precision and every workspace is safeguarded, empowering operators to work confidently and efficiently.</p>
+          <div data-w-id="c571feb0-d93f-a69b-adb7-124a7c66df31" style="opacity:0" class="ps-text-column">
+            <h3 class="primary-text-color margin-bottom-30">Streamlined Operations</h3>
+            <p class="margin-bottom-16 semi-bold">Themis-Trace simplifies essential inventory tasks such as order processing, scheduling, and real-time tracking within a single, intuitive platform. Its self-service web portal provides maximum accessibility and ease of use for both teams and logistics partners.</p>
+            <p class="text-light">By eliminating manual entry and replacing traditional systems, it reduces errors and administrative burden, allowing teams to focus on moving products efficiently. With real-time visibility into inventory levels and locations, warehouse staff and managers can make faster, more informed decisions that increase productivity and minimize delays throughout the operation.</p>
           </div>
-          <div data-w-id="c571feb0-d93f-a69b-adb7-124a7c66df38" style="opacity:0" class="ps-image-column"><img src="images/Solution-Page-Banner-Animation_1.webp" loading="lazy" width="602" height="410" alt="telia" srcset="images/Solution-Page-Banner-Animation_1Solution-Page-Banner-Animation.webp 500w, images/Solution-Page-Banner-Animation_1Solution-Page-Banner-Animation.webp 800w, images/Solution-Page-Banner-Animation_1Solution-Page-Banner-Animation.webp 1080w, images/Solution-Page-Banner-Animation_1Solution-Page-Banner-Animation.webp 1600w, images/Solution-Page-Banner-Animation_1Solution-Page-Banner-Animation.webp 2000w, images/Solution-Page-Banner-Animation_1.webp 2160w" sizes="(max-width: 767px) 100vw, 602px" class="ps-image telia-handheld"></div>
+          <div data-w-id="c571feb0-d93f-a69b-adb7-124a7c66df38" style="opacity:0" class="ps-image-column"><img src="images/streamlined_operations_new.png" loading="lazy" width="532" height="371" alt="Streamlined Operations" class="ps-image with-border-radius"></div>
         </div>
         <div class="ps-wrapper">
-          <div data-w-id="41cc5afa-f36a-99cb-da13-dbcad0fb7126" style="opacity:0" class="ps-image-column"><img src="images/Untitled-design.png" loading="lazy" width="602" height="410" alt="" srcset="images/Untitled-design-p-500.png 500w, images/Untitled-design-p-800.png 800w, images/Untitled-design.png 940w" sizes="(max-width: 767px) 100vw, 602px" class="ps-image telia-handheld"></div>
-          <div data-w-id="bd8e2ecc-1ae8-5de7-e895-b623bba8a9d3" style="opacity:0" class="ps-text-column"><img src="images/Copy-of-THEMIS-TRACE-Logo-.png" loading="lazy" alt="" height="Auto" class="ps-logo-img2">
-            <p class="margin-bottom-16 semi-bold">Built in collaboration with the people who use it most, Themis-Trace is a next generation inventory management system designed for real-world operations. Reimagined from the ground up, it features a modern, intuitive interface where ease of use is center stage, streamlined workflows that integrates a check-in service kiosk to dramatically reduce truck turnaround time, and powerful insights that transform how inventory is tracked, moved and understood. </p>
-            <p class="text-light">Whether on a browser or mobile device, Themis-Trace puts total control at your fingertips. Schedule shipments and receiving, get notifications when product is on it&#x27;s way to your facility, print BOLS, and access detailed reports- all the while maintaining 100% product accuracy. In a sector where traditional, manual system are still prevalent, Themis-Trace brings clarity, confidence, and efficiency to every stage of the process. </p>
+          <div data-w-id="41cc5afa-f36a-99cb-da13-dbcad0fb7126" style="opacity:0" class="ps-image-column"><img src="images/Secure_accessible_new.png" loading="lazy" width="532" height="371" alt="Secure, Accessible" class="ps-image with-border-radius"></div>
+          <div data-w-id="bd8e2ecc-1ae8-5de7-e895-b623bba8a9d3" style="opacity:0" class="ps-text-column">
+            <h3 class="primary-text-color margin-bottom-30">Secure, Accessible</h3>
+            <p class="margin-bottom-16 semi-bold">With Themis-Trace, your inventory data is protected by industry-leading cloud security. Built on the infrastructure of trusted cloud providers, the system ensures all information is encrypted, safely stored, and backed up—shielding your operation from data loss or breaches.</p>
+            <p class="text-light">Role-based access and secure login protocols keep control in the right hands, while remote accessibility empowers teams to manage inventory from anywhere without compromising security.</p>
           </div>
         </div>
         <div class="ps-wrapper reverce">
           <div data-w-id="b4284318-61bc-265d-ad43-d67fca0b3079" style="opacity:0" class="ps-text-column">
-            <h3 class="primary-text-color margin-bottom-30">Interactables</h3>
-            <div class="ps-subtext-wrap">
-              <p class="margin-bottom-16 semi-bold">A well informed facility is a more efficient operation. With both the HMI and Dashboard, you get up-to-the-minute data on everything happening under your roof.</p>
-            </div>
-            <p class="text-light">With a robust reporting suite, you’ll never have to wonder when you can see for yourself, all automatically compiled by TELIA. This depth and breadth of information you can gain an incredibly easy way to propel your facility to the next level, even after TELIA’s implementation. </p>
+            <h3 class="primary-text-color margin-bottom-30">Effortless Check-Ins For Drivers</h3>
+            <p class="margin-bottom-16 semi-bold">Our self check-in kiosk streamlines the arrival process for logistics partners. Upon arrival, drivers simply enter key details such as their truck number, trailer number, and Appointment ID.</p>
+            <p class="text-light">This quick and intuitive process reduces wait times, eliminates bottlenecks, and provides the facility with real-time visibility into incoming shipments—helping everyone stay on schedule and reducing costly idling time.</p>
           </div>
-          <div data-w-id="b4284318-61bc-265d-ad43-d67fca0b3081" style="opacity:0" class="ps-image-column"><img src="images/HMI.svg" loading="lazy" width="532" height="371" alt="HMI illustration" class="ps-image hmi"></div>
+          <div data-w-id="b4284318-61bc-265d-ad43-d67fca0b3081" style="opacity:0" class="ps-image-column"><img src="images/Kiosk.png" loading="lazy" width="532" height="371" alt="Kiosk Check-in System" class="ps-image hmi"></div>
         </div>
-        <div class="ps-wrapper">
-          <div data-w-id="dd55829f-e57d-860e-03c2-0ca9018671b0" style="opacity:0" class="ps-image-column"><img src="images/Telia-HandHeld.svg" loading="lazy" width="602" height="410" alt="Telia HandHeld illustration" class="ps-image telia-handheld"></div>
-          <div data-w-id="dd55829f-e57d-860e-03c2-0ca9018671b2" style="opacity:0" class="ps-text-column"><img src="images/TELIA-handheld-Horizontal.png" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 727.90625px, 939.890625px" height="Auto" alt="" srcset="images/TELIA-handheld-Horizontal-p-500.png 500w, images/TELIA-handheld-Horizontal-p-800.png 800w, images/TELIA-handheld-Horizontal.png 2585w" class="ps-logo-img">
-            <p class="margin-bottom-16 semi-bold">TELIA handheld, a powerful solution to manage your storage space. Whether it’s for a steel mill, metal service center, port or transload, TELIA handheld will manage your inventory by providing operator instructions and tracking inventory positions automatically.</p>
-            <p class="text-light">Utilizing TELIA&#x27;s patented space optimization algorithms, TELIA handheld instructs operators where to place inventory for optimal storage and safety.  With minimal implementation, TELIA handheld will improve velocity through your facility and be up and running within 6 weeks.</p>
-          </div>
-        </div>
-        <div>
-          <h2 class="text-center">Services</h2>
+        <div style="margin-bottom: 50px;">
+          <h2 class="text-center">Key Features</h2>
           <div class="ps-gradient-line"></div>
         </div>
         <div class="ps-wrapper greenfield-design inner-space">
-          <div data-w-id="486d75a8-e2c8-6d5f-b74f-184b567cc87b" style="opacity:0" class="ps-image-column greenfield-design"><img src="images/Greenfield-image_1.webp" loading="lazy" width="525" height="313" alt="Greenfield image" srcset="images/Greenfield-image_1Greenfield-image.webp 500w, images/Greenfield-image_1Greenfield-image.webp 800w, images/Greenfield-image_1.webp 1050w" sizes="(max-width: 767px) 100vw, 525px" class="ps-image with-border-radius"></div>
+          <div data-w-id="486d75a8-e2c8-6d5f-b74f-184b567cc87b" style="opacity:0" class="ps-image-column greenfield-design"><img src="images/invaluableinsights5.png" loading="lazy" width="532" height="371" alt="Invaluable Insights" class="ps-image with-border-radius"></div>
           <div data-w-id="486d75a8-e2c8-6d5f-b74f-184b567cc87d" style="opacity:0" class="ps-text-column">
-            <h3 class="primary-text-color margin-bottom-30">Greenfield Design</h3>
-            <p class="margin-bottom-16 semi-bold">Embarking on your project from square one allows us to meticulously optimize your facility from the ground up, resulting in a truly exceptional and productive environment. </p>
-            <p class="text-light">With our comprehensive approach, spanning layout design to equipment selection, we guarantee a tailored facility that not only maximizes efficiency but also establishes unprecedented productivity benchmarks right from the start while saving valuable square footage. Our expertise ensures a solution that reshapes your operations and sets the stage for enduring success.</p>
+            <h3 class="primary-text-color margin-bottom-30">Invaluable Insights</h3>
+            <p class="margin-bottom-16 semi-bold">Themis-Trace makes inventory management effortless—helping you easily receive, easily ship, and always know what's on the shop floor. Built-in tools for quality control, performance monitoring, and real-time reporting give your team the clarity they need to keep operations moving without the usual friction.</p>
           </div>
         </div>
         <div class="ps-wrapper reverce brownfield-design">
           <div data-w-id="985bc154-47f9-ce51-bb2e-dc7a4cd29d02" style="opacity:0" class="ps-text-column brownfield-design">
-            <h3 class="primary-text-color margin-bottom-30">Brownfield Design</h3>
-            <p class="margin-bottom-16 semi-bold">Creating something fresh and exciting with pre-existing infrastructure is a challenge we’re always ready for.</p>
-            <p class="text-light">TELIA’s malleable nature makes it a solution to every problem, allowing every facility to become one that’s powered by TELIA. We routinely find ourselves in facilities with untapped potential that need to recycle existing infrastructure. Implementing TELIA in your facility is a surefire way to get the most out of your operation as it exists.</p>
+            <h3 class="primary-text-color margin-bottom-30">Quality Control & Compliance</h3>
+            <p class="margin-bottom-16 semi-bold">Themis-Trace helps you uphold high standards by embedding quality checks directly into the receiving process—ensuring every item meets your specifications before it enters inventory. With automatic audit trails that log every movement and adjustment, you gain full transparency across your operation. This not only strengthens internal accountability but also supports compliance with industry regulations and customer requirements, giving you confidence in every transaction.</p>
           </div>
-          <div data-w-id="985bc154-47f9-ce51-bb2e-dc7a4cd29d00" style="opacity:0" class="ps-image-column brownfield-design">
-            <div class="ps-image-column-before-after before"><img src="images/old_1.webp" loading="lazy" width="754" height="469" alt="old storage" srcset="images/old_1old.webp 500w, images/old_1old.webp 800w, images/old_1old.webp 1080w, images/old_1.webp 1508w" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 754px" class="brownfield-design-old"></div>
-            <div class="ps-image-column-before-after after"><img src="images/new_1.webp" loading="lazy" width="574" height="469" alt="new storage" srcset="images/new_1new.webp 500w, images/new_1new.webp 800w, images/new_1new.webp 1080w, images/new_1.webp 1508w" sizes="(max-width: 767px) 100vw, 574px" class="brownfield-design-new"></div>
-            <div class="scroller">
-              <div class="scroller-circle"><img src="images/Vector-48.svg" loading="lazy" width="25" alt="arrow" class="image"></div>
-            </div>
-          </div>
+          <div data-w-id="985bc154-47f9-ce51-bb2e-dc7a4cd29d00" style="opacity:0" class="ps-image-column brownfield-design"><img src="images/qc3.png" loading="lazy" width="532" height="371" alt="Quality Control & Compliance" class="ps-image with-border-radius"></div>
         </div>
         <div class="ps-wrapper">
-          <div data-w-id="cb47ccbd-3d04-b077-c3bd-50f2a133180c" style="opacity:0" class="ps-image-column"><img src="images/Flow-Analysis.svg" loading="lazy" width="751" height="369" alt="Flow Analysis illustration" class="ps-image flow-analysis"></div>
+          <div data-w-id="cb47ccbd-3d04-b077-c3bd-50f2a133180c" style="opacity:0" class="ps-image-column"><img src="images/port_new.png" loading="lazy" width="532" height="371" alt="Simplify Shipping & Receiving" class="ps-image with-border-radius"></div>
           <div data-w-id="cb47ccbd-3d04-b077-c3bd-50f2a1331805" style="opacity:0" class="ps-text-column flow-analysis">
-            <h3 class="primary-text-color margin-bottom-30">Flow Analysis</h3>
-            <p class="margin-bottom-16 semi-bold">We’re all chasing efficiency goals that wow, throughput numbers that jump off the page and a facility that&#x27;s the envy of the industry.</p>
-            <p class="text-light">It’s a tall task,but one that becomes achievable with a consultation. Our team of skilled engineers and systems managers will work closely with you, outfitting your facility with sensors to track product flow and equipment usage. We dive deep into your facility’s workflow data, providing insights that give you an intimate understanding of your operations. Armed with this knowledge, you’ll have the tools to make the productivity gains you’ve been striving for.</p>
+            <h3 class="primary-text-color margin-bottom-30">Simplify Shipping & Receiving</h3>
+            <p class="margin-bottom-16 semi-bold">Themis-Trace takes the guesswork out of shipping and receiving by guiding teams through every step, from order creation to label printing and truck coordination. Real-time updates and intuitive task scheduling keep things moving smoothly, while self-service kiosks let drivers check in, print paperwork, and get back on the road faster. The result? Shorter wait times, fewer errors, and a more organized, efficient flow of goods in and out of your facility.</p>
           </div>
         </div>
         <div class="ps-wrapper reverce">
           <div data-w-id="7330b2d4-b0a5-f48b-1eb0-fb6cbbe15f51" style="opacity:0" class="ps-text-column">
-            <h3 class="primary-text-color margin-bottom-30">Digital Twin</h3>
-            <p class="margin-bottom-16 semi-bold">As a part of our consulting services, we visualize your facility before construction with Digital Twin - our innovative solution providing you with a fully realized virtual model of your optimized facility.</p>
-            <p class="text-light">This allows you to see the shape and workflow of your operation, allowing for a collaborative process that can work out any kinks, bottlenecks or clear up any questions. With Digital Twin, clients can explore their future facility in detail, ensuring a comprehensive understanding and optimized design before a single brick is laid or change is made.</p>
+            <h3 class="primary-text-color margin-bottom-30">Plan To Scan</h3>
+            <p class="margin-bottom-16 semi-bold">With Themis-Trace and CareGo's scanning capabilities, inventory is instantly logged into the system, making it fully traceable, trackable, and visible from the moment it arrives. No more searching the shop floor or second-guessing where a product is. Themis-Trace works seamlessly with most existing scanning devices, allowing teams to streamline workflows without overhauling equipment. It's a faster, smarter way to bring accuracy and control to your inventory management.</p>
           </div>
-          <div data-w-id="7330b2d4-b0a5-f48b-1eb0-fb6cbbe15f58" style="opacity:0" class="ps-image-column"><img src="images/Digital-Twin.svg" loading="lazy" width="401" height="371" alt="Digital Twin illustration" class="ps-image digital-twin"></div>
+          <div data-w-id="7330b2d4-b0a5-f48b-1eb0-fb6cbbe15f58" style="opacity:0" class="ps-image-column"><img src="images/ScannerMan3.png" loading="lazy" width="532" height="371" alt="Plan To Scan" class="ps-image"></div>
           <div data-w-id="546c9eab-a4af-95af-8740-ab146c8124d4" style="opacity:0" class="digital-twin-gradient w-embed">
             <style>
 .digital-twin-gradient {
@@ -604,22 +1013,18 @@ filter: blur(50px);
 }
 </style>
           </div>
-          <div data-w-id="0a51ca5c-459a-9235-db38-53d5bdf4bf42" style="opacity:0" class="ps-image-column implementation"><img src="images/Implementation.svg" loading="lazy" width="541" height="306" alt="Implementation illustration" class="ps-image implementation"></div>
+          <div data-w-id="0a51ca5c-459a-9235-db38-53d5bdf4bf42" style="opacity:0" class="ps-image-column implementation"><img src="images/optimized_reporting_new.png" loading="lazy" width="532" height="371" alt="Customized Reporting" class="ps-image with-border-radius"></div>
           <div data-w-id="0a51ca5c-459a-9235-db38-53d5bdf4bf3b" style="opacity:0" class="ps-text-column">
-            <h3 class="primary-text-color margin-bottom-30">Implementation</h3>
-            <div class="ps-subtext-wrap">
-              <p class="margin-bottom-16 semi-bold">Our comprehensive Implementation service goes beyond conceptualization, guiding customers through every phase of installation, construction, and facility optimization.</p>
-            </div>
-            <p class="text-light">From project inception to completion, our dedicated team ensures a seamless journey, offering expertise and support at every turn. We prioritize a hands-on approach, collaborating closely with clients to bring their vision to life. With meticulous attention to detail and a commitment to excellence, our Implementation service ensures that your facility not only meets but exceeds expectations throughout every stage of development.</p>
+            <h3 class="primary-text-color margin-bottom-30">Customized Reporting</h3>
+            <p class="margin-bottom-16 semi-bold">Themis-Trace makes it easy to create custom reports tailored to your operation's needs. Whether you're highlighting shipment history, inventory accuracy, or turnaround times, you can build reports that showcase performance in real terms. Share them directly with customers to provide transparency, build trust, and demonstrate just how smoothly your facility is running. It's a powerful way to turn data into a competitive edge.</p>
           </div>
         </div>
         <div class="ps-wrapper reverce customer-success">
           <div data-w-id="131e8283-24b2-c6f4-7997-032a2b9b4ed5" style="opacity:0" class="ps-text-column">
-            <h3 class="primary-text-color margin-bottom-30">Customer Success</h3>
-            <p class="margin-bottom-16 semi-bold">When you power your facility with TELIA, there’s a lot to learn, and we’ll be there to help you and your employees get the most out of our platform.</p>
-            <p class="text-light">Through customized training modules, we ensure a smooth learning curve, enhancing proficiency and productivity. Our dedicated 24/7 hotline stands as a pillar of support, swiftly addressing any queries or challenges that may arise. With a commitment to client satisfaction, we prioritize continuous improvement and tailored assistance, fostering a collaborative environment for optimal utilization of our software.</p>
+            <h3 class="primary-text-color margin-bottom-30">Integration Station</h3>
+            <p class="margin-bottom-16 semi-bold">Themis-Trace is built to work with the systems you already rely on. With robust API support and seamless integration capabilities, it ensures smooth data flow between platforms and eliminates silos and manual transfers. Whether connecting to your ERP or other existing tools, Themis-Trace keeps everything in sync so your operation runs smarter, not harder.</p>
           </div>
-          <div data-w-id="131e8283-24b2-c6f4-7997-032a2b9b4ed3" style="opacity:0" class="ps-image-column customer-success"><img src="images/Customer-Success.svg" loading="lazy" width="486" height="358" alt="Customer Success illustration" class="ps-image customer-success"></div>
+          <div data-w-id="131e8283-24b2-c6f4-7997-032a2b9b4ed3" style="opacity:0" class="ps-image-column customer-success"><img src="images/api_integrations.png" loading="lazy" width="532" height="371" alt="Integration Station" class="ps-image with-border-radius"></div>
           <div data-w-id="f11312a7-e1aa-9fe2-01cc-c6608149e2db" style="opacity:0" class="customer-success-gradient w-embed">
             <style>
 .customer-success-gradient {
@@ -632,11 +1037,10 @@ filter: blur(50px);
           </div>
         </div>
         <div class="ps-wrapper">
-          <div data-w-id="5871cffa-0262-933f-4fc4-8ecf7cbad3c9" style="opacity:0" class="ps-image-column"><img src="images/Evolving-Your-Experience.svg" loading="lazy" width="631" height="598" alt="Evolving Your Experience illustration" class="ps-image experience"></div>
+          <div data-w-id="5871cffa-0262-933f-4fc4-8ecf7cbad3c9" style="opacity:0" class="ps-image-column"><img src="images/multi-platform_new.png" loading="lazy" width="532" height="371" alt="Multi-Platform" class="ps-image with-border-radius"></div>
           <div data-w-id="5871cffa-0262-933f-4fc4-8ecf7cbad3cb" style="opacity:0" class="ps-text-column">
-            <h3 class="primary-text-color margin-bottom-30">Evolving Your Experience</h3>
-            <p class="margin-bottom-16 semi-bold">Our commitment to excellence is something all of our partners see when they power their facility with TELIA. By seamlessly integrating our latest features, we aim to provide your operation with an advanced and optimized experience.</p>
-            <p class="text-light">Our innovation-driven approach ensures that we not only meet but exceed our user’s expectations. We’ve made our name on embracing change and staying at the forefront of technological possibilities, and passing that along to our users to deliver a superior experience. It’s our closely held belief that innovation is a continuous journey that inspires us to keep pushing the boundaries of what’s possible and elevating our customer’s path to success. </p>
+            <h3 class="primary-text-color margin-bottom-30">Multi-Platform</h3>
+            <p class="margin-bottom-16 semi-bold">Stay connected to your operation from anywhere. Themis-Trace is fully accessible through its secure web portal, giving you real-time access to inventory, orders, and reports across devices. Whether you're on a desktop in the office, a tablet on the floor, or your phone on the go, Themis-Trace keeps your entire operation at your fingertips—no downloads, no hassle.</p>
           </div>
           <div data-w-id="b4de381d-e900-6864-ab95-c88c6699d48d" style="opacity:0" class="experience-gradient w-embed">
             <style>

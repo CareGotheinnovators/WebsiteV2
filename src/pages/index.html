@@ -39,12 +39,115 @@
   opacity: 0;
   transition: all 0.2s ease-in-out;
  }
+ /* Hide the sliding under-dot when hovering over dropdown */
+ .nav-dropdown:hover ~ .under-dot,
+ .nav-dropdown-toggle:hover ~ .under-dot {
+  display: none !important;
+  opacity: 0 !important;
+ }
+ /* Dropdown - clean redesign */
+ .nav-dropdown-toggle .nav-link {
+  position: relative;
+ }
+ /* Hide the original dot, we'll create our own */
+ .nav-dropdown-toggle .nav-link-dot {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+ }
+ /* Create a new centered dot with pseudo-element */
+ .nav-dropdown-toggle .nav-link-text::before {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+ }
+ .nav-dropdown-toggle .nav-link:hover .nav-link-text::before,
+ .nav-dropdown-toggle .nav-link.w--current .nav-link-text::before {
+  opacity: 1;
+ }
+ /* Chevron positioned to the right */
+ .nav-dropdown-toggle .nav-link::after {
+  content: '▾';
+  font-size: 14px;
+  opacity: 0.7;
+  transition: transform 0.2s ease-in-out;
+  position: absolute;
+  right: -24px;
+  top: 0;
+  color: var(--grey);
+ }
+ .nav-dropdown-toggle .nav-link:hover::after {
+  color: var(--primary);
+ }
+ .nav-dropdown.w--open .nav-dropdown-toggle .nav-link::after {
+  transform: rotate(180deg);
+ }
+ .nav-dropdown {
+  position: relative;
+ }
+ .nav-dropdown-toggle {
+  padding-bottom: 25px;
+  margin-bottom: -25px;
+ }
+ .nav-dropdown-list-wrap {
+  margin-top: 20px !important;
+  min-width: 240px !important;
+  width: auto !important;
+  background-color: var(--dark-blue) !important;
+  border: 2px solid var(--primary) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+  padding: 16px !important;
+ }
+ .nav-dropdown-list {
+  background-color: transparent !important;
+  padding: 0 !important;
+ }
+ .nav-dropdown-links-wrapper {
+  width: 100% !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0 !important;
+ }
+ .dropdown-nav-link {
+  white-space: nowrap;
+  text-align: center !important;
+  width: 100% !important;
+  padding: 12px 20px !important;
+  display: block !important;
+  color: var(--white) !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease-in-out !important;
+  border-radius: 6px !important;
+  margin: 0 !important;
+ }
+ .dropdown-nav-link:hover {
+  background-color: var(--primary) !important;
+  color: var(--dark-blue) !important;
+  transform: translateX(4px) !important;
+ }
  @media screen and (max-width: 991px) {
   .nav-menu .menu-wrap {
    height: calc(100vh - 88px);
   }
   .nav-menu .menu-additional-info-wrap {
    margin-top: auto;
+  }
+  .nav-dropdown-toggle .nav-link-text::after {
+   content: '';
   }
  }
 </style>
@@ -444,10 +547,20 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
                 <div class="nav-link-text">TELIA</div>
                 <div class="nav-link-dot"><br></div>
               </a>
-              <a data-w-id="ee3d3d1e-99e2-b5b8-5345-cc25d4f18b0e" href="products-and-services.html" class="nav-link w-inline-block">
-                <div class="nav-link-text">Products &amp; Services</div>
-                <div class="nav-link-dot"><br></div>
-              </a>
+              <div data-hover="true" data-delay="300" data-w-id="ee3d3d1e-99e2-b5b8-5345-cc25d4f18b0e" class="nav-dropdown w-dropdown">
+                <div class="nav-dropdown-toggle w-dropdown-toggle">
+                  <a href="products-and-services.html" class="nav-link w-inline-block">
+                    <div class="nav-link-text">Products &amp; Services</div>
+                  </a>
+                </div>
+                <nav class="nav-dropdown-list-wrap w-dropdown-list">
+                  <div class="nav-dropdown-list">
+                    <div class="nav-dropdown-links-wrapper">
+                      <a href="themis-trace.html" class="dropdown-nav-link">Inventory Management</a>
+                    </div>
+                  </div>
+                </nav>
+              </div>
               <a data-w-id="ee3d3d1e-99e2-b5b8-5345-cc25d4f18b14" href="case-studies.html" class="nav-link w-inline-block">
                 <div class="nav-link-text">Case Studies</div>
                 <div class="nav-link-dot"><br></div>
@@ -1933,7 +2046,7 @@ filter: blur(50px);
       let curNavItemPos = $('.navbar .nav-menu-wrapper .nav-link.w--current').first().position().left;
       let curNavItemWidth = $('.navbar .nav-menu-wrapper .nav-link.w--current').first().width() / 2 - 3;
       $('.nav-link-dot.under-dot').css({ opacity: '1', left: curNavItemPos + curNavItemWidth + 'px' });
-      $('.nav-menu-wrapper .nav-link').hover( function(){
+      $('.nav-menu-wrapper .nav-link').not('.nav-dropdown .nav-link').hover( function(){
         let navItemPos = $(this).position().left + ($(this).width() / 2) - 3 + 'px';
         $('.nav-link-dot.under-dot').css({'opacity': '1', left: navItemPos });
       }, function() {
@@ -1941,7 +2054,7 @@ filter: blur(50px);
         $('.nav-link-dot.under-dot').css({ opacity: '1', left: curNavItemPos + curNavItemWidth + 'px' });
       });
     } else {
-      $('.nav-menu-wrapper .nav-link').hover( function(){
+      $('.nav-menu-wrapper .nav-link').not('.nav-dropdown .nav-link').hover( function(){
         let navItemPos = $(this).position().left + ($(this).width() / 2) - 3 + 'px';
         $('.nav-link-dot.under-dot').css({'opacity': '1', left: navItemPos });
       }, function() {
